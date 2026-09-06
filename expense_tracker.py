@@ -1,5 +1,4 @@
-Expense=[]
-prices=[]
+Expense =[]
 
 while True:
        
@@ -8,12 +7,19 @@ while True:
        if category == "finish":
                      break
        price=float(input("Enter the price.\n"))
-       Expense.append(category)
-       prices.append(price)
-       print(Expense)
-       print(prices)
+       expense={}
+       expense["category"]= category
+       expense["price"]=price
+       
+       Expense.append(expense)
+       
 
+       print(expense)
+        
+count=0
+for i in range (len(Expense)):
+ z=Expense[i].get("price")
+ count+=z
 
-amount= float(sum(prices))
-print(f"The total amount spent is {amount}")
+print(f"The total amount spent is {count}")
        
