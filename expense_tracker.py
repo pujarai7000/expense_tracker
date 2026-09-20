@@ -4,7 +4,9 @@ while True:
        print("1. Add expense")
        print("2. View expense")
        print("3. View total")
-       print("4. Exit")
+       print("4. Delete")
+       print("5. Exit")
+      
        option=input("Choose option\n")
        
        
@@ -27,8 +29,24 @@ while True:
             count+=z
 
            print(f"The total amount spent is {count}")
+       elif option =="4":
+           
+            for number,detail in enumerate(Expense,start=1):
+               print(number,detail)
+            try:
+                
+                     
+                  index=int(input("Enter the index.\n"))
+                  Expense.pop(index-1)
+                  print("Expense deleted")
+                  print(Expense)
+            except IndexError:
+
+                print("Invalid input")
+            
+            
              
-       if option =="4" :
+       if option =="5" :
                      break
        
 
